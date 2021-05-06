@@ -1,8 +1,15 @@
 <div class="container">
 <h1>My lists</h1>
-<p><% @lists.each do |list| %>
-  <li><%= link_to list.name, list_path(list) %></li>
-  <% end %></p>
+  <% @lists.each do |list| %>
+    <!-- <li><%= link_to list.name, list_path(list) %></li> -->
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= list.name %></h5>
+        <%= link_to "View list", list_path(list), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
 
-<%= link_to "Create a list", new_list_path, class: "btn btn-primary" %>
+<p><%= link_to "Create a list", new_list_path, class: "btn btn-primary" %></p>
 </div>
