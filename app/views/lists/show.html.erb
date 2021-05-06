@@ -1,5 +1,6 @@
 <div class="container">
   <h1><%= @list.name %></h1>
+  <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
   <p><h3>Bookmarks</h3>
   <% @list.bookmarks.each do |bookmark| %>
     <li><%= bookmark.movie.title %> | <%= bookmark.comment %> | <%= link_to "Delete bookmark", list_bookmark_path(@list, bookmark), method: :delete,
